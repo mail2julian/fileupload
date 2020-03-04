@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>WELCOME:UPLOAD FILE</title>
+
+
+ <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='file/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+
+
+  
+</head>
+<body>
+<div class="split left">
+  <div class="centered">
+  <div>
+	<h1>UPLOAD NEW FILE</h1>
+
+     
+     <form method=post enctype=multipart/form-data>
+    	<input type="file" name="file" placeholder="NEW FILE" required="required" />      
+        <button type="submit" class="btn btn-primary btn-block btn-large">Upload</button>
+        
+{% for table in tables %}
+    {{titles[loop.index]}}
+    {{ table|safe }}
+{% endfor %}
+    </form>
+    
+
+ </div>
+
+
+</body>
+</html>
